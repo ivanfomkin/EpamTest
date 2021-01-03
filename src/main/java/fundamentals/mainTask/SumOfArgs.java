@@ -1,4 +1,4 @@
-package fundamentals;
+package fundamentals.mainTask;
 
 public class SumOfArgs {
     public static void main(String[] args) {

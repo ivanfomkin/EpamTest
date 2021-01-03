@@ -1,4 +1,4 @@
-package fundamentals;
+package fundamentals.mainTask;
 
 import java.io.BufferedReader;
 import java.io.IOException;
