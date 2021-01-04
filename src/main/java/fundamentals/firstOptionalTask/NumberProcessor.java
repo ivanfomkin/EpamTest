@@ -42,4 +42,19 @@ public class NumberProcessor {
         map.entrySet().stream().sorted(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey)
                 .forEach(System.out::println);
     }
+
+    private static double getAverageLength(int[] array) {
+        return getSizeMapFromArray(array).entrySet().stream()
+                .mapToInt(Map.Entry::getValue).summaryStatistics().getAverage();
+    }
+
+    public static void printLessThanAverageLengthValues(int[] array) {
+        double averageLength = getAverageLength(array);
+        System.out.println("Average length: " + averageLength);
+        for (Map.Entry<Integer, Integer> entry : getSizeMapFromArray(array).entrySet()) {
+            if (entry.getValue() < averageLength) {
+                System.out.println(entry.getKey());
+            }
+        }
+    }
 }
