@@ -1,5 +1,6 @@
 package fundamentals.firstOptionalTask;
 
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -34,5 +35,11 @@ public class NumberProcessor {
             map.put(array[i], getNumberLength(array[i]));
         }
         return map;
+    }
+
+    public static void printByLength(int[] array) {
+        Map<Integer, Integer> map = getSizeMapFromArray(array);
+        map.entrySet().stream().sorted(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey)
+                .forEach(System.out::println);
     }
 }
